@@ -1,6 +1,4 @@
-import MainNav from "./components/MainNavigation"
 
-import mainCSS from "./styles/main.css"
 
 import {
   Links,
@@ -11,6 +9,16 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import sharedStyles from './styles/shared.css'
+
+export const meta = () => {
+  return [ {
+    charset: 'utf-8',
+    title: 'Expense App Home',
+    viewport: 'width=device-width,initial-scale=1'
+  }]
+}
+
 
 export default function App() {
   return (
@@ -19,11 +27,12 @@ export default function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
         <Links />
       </head>
-      <header>
-        <MainNav />
-      </header>
+
       <body>
         <Outlet />
         <ScrollRestoration />
@@ -34,6 +43,6 @@ export default function App() {
   );
 }
 
-export const links = () => [
-  ...([{ rel: "stylesheet", href: mainCSS }]),
-];
+export const links = () => {
+  return [{rel: 'stylesheet', href: sharedStyles}]
+};
