@@ -1,4 +1,5 @@
-import { Link } from "@remix-run/react";
+import {  useNavigate } from "@remix-run/react";
+import Modal from "../components/util/Modal";
 import ExpesesForm from '../components/expenses/ExpenseForm'
 
 export const meta = () => {
@@ -6,9 +7,13 @@ export const meta = () => {
 };
 
 export default function ExpensesAddPage() {
+  const navagate = useNavigate()
+  function closeHandler(){
+    navagate('..')
+  }
   return (
     
-    <ExpesesForm />
+    <Modal onClose={closeHandler}><ExpesesForm /></Modal>
 
 
   );

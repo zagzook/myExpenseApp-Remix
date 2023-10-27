@@ -1,5 +1,4 @@
 import AuthForm from '../components/auth/AuthForm'
-import { Link } from "@remix-run/react";
 import authStyles from '../styles/auth.css'
 
 export const meta = () => {

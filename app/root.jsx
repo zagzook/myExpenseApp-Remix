@@ -1,5 +1,5 @@
 
-
+import MainHeader from "./components/navigation/MainHeader";
 import {
   Links,
   LiveReload,
@@ -34,6 +34,9 @@ export default function App() {
       </head>
 
       <body>
+        <header>
+          <MainHeader />
+        </header>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
